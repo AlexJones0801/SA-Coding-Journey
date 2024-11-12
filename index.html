@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D CSS Booklet</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+</head>
+<body>
+  <!-- Start of flipbook -->
+  <div class="flipbook centered" id="flipbook">
+    <!-- First page -->
+    <div class="leaf">
+      <div class="page front title external">
+        <h1>Welcome Ansh</h1>
+      </div>
+      <div class="page back">
+        <div class="pageNumber">i</div>
+        <img src="https://picsum.photos/200/301" alt="" style="width:100%">
+      </div>
+    </div>
+
+    <!-- Second page (First meeting) -->
+    <div class="leaf">
+      <div class="page front">
+        <div class="pageNumber">ii</div>
+        <h2>Our First Meeting</h2>
+        <p>
+          <!-- Add your personal content about the first meeting here -->
+        </p>
+      </div>
+      <div class="page back">
+        <div class="pageNumber">iii</div>
+        <h2>Remember the beginning?</h2>
+        <p>
+          <!-- You can describe more details here about your journey after meeting -->
+        </p>
+      </div>
+    </div>
+
+    <!-- More pages can go here, following the same structure -->
+  </div>
+  <!-- End of flipbook -->
+
+  <div class="controls centered">
+    <button id="prevPage">&lt; Previous</button>
+    <button id="nextPage">Next &gt;</button>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
