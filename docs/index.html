@@ -1,46 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>3D CSS Booklet</title>
+  <title>Flipbook - A Friendship Journey</title>
   <link rel="stylesheet" href="./style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Corinthia:wght@400;700&family=Bonheur+Royale&display=swap');
+  </style>
 </head>
+
 <body>
-  <!-- Start of flipbook -->
   <div class="flipbook centered" id="flipbook">
-    <!-- First page -->
     <div class="leaf">
-      <div class="page front title external">
-        <h1>Welcome Ansh</h1>
+      <div class="page front title" style="background-color:#e6f2ff;">
+        <h1 class="front-title">Welcome, Ansh</h1>
+        <em class="front-subtitle">A Little Recap of Our Friendship & Projects</em>
       </div>
-      <div class="page back">
-        <div class="pageNumber">i</div>
-        <img src="https://picsum.photos/200/301" alt="" style="width:100%">
+      <div class="page back" style="background-color:#b3d9ff;">
+        <div class="page-content centered">
+          <img src="image/Ansh.png" alt="Welcome Image" style="width:35%;height: 60%;">
+          <!-- <img src="https://picsum.photos/200/301" alt="Welcome Image" style="width:100%"> -->
+        </div>
       </div>
     </div>
 
-    <!-- Second page (First meeting) -->
     <div class="leaf">
-      <div class="page front">
-        <div class="pageNumber">ii</div>
-        <h2>Our First Meeting</h2>
-        <p>
-          <!-- Add your personal content about the first meeting here -->
-        </p>
+      <div class="page front" style="background-color:#b3d9ff;">
+        <h2 class="page-title">First Meeting</h2>
+        <p>"Ansh, do you remember how we first met? It was back in the 4th semester, and I was still the quiet type guy
+          —
+          nothing like now. We were all learning the basics of web design with HTML & CSS and you were already friends
+          with Ashwin. One day, you found out I was also interested in coding and that I knew a bit about it, too.
+          That's when you started talking to me. We dove into discussions about HTML and CSS, exploring new elements,
+          their implementations, and creating all kinds of simple login forms together. We had so much fun, learning and
+          laughing along the way. I think that's when our core skills in HTML and CSS really took shape, and so did our
+          friendship. (Now... turn the page!)"</p>
       </div>
-      <div class="page back">
-        <div class="pageNumber">iii</div>
-        <h2>Remember the beginning?</h2>
-        <p>
-          <!-- You can describe more details here about your journey after meeting -->
-        </p>
+      <div class="page back" style="background-color:#cceeff;">
+        <h2 class="page-title">Second Memory</h2>
+        <p>"After the 4th semester, the real fun kicked in during 5th semester—that's when our friendship became ultra
+          pro max strong. Do you remember how we started studying Java then? We just nailed it, grabbing concepts and
+          codes so fast, making program after program. Then, near the end of the semester, Rashmi ma'am introduced us to
+          Java AWT for GUI creation. Oh man, that's when things got serious! We decided to make a GUI calculator using
+          Java AWT, and you even introduced me to Java Swing. We dove right in and had a working GUI calculator in about
+          11 days. I'll never forget that moment when we showed it to ma'am, and she told the whole class, ‘Everyone
+          should learn from these boys—they created a GUI calculator in just 10-11 days!' That's when we realized our
+          duo, our project partnership, was something special—or in my words, "Zahar". And that same year, when HOD sir
+          mentioned making teams for a major project, we were ready to dive in, as always. And that's how our life
+          biggest project journey really began." </p>
       </div>
     </div>
 
-    <!-- More pages can go here, following the same structure -->
+    <div class="leaf">
+      <div class="page front" style="background-color:#cceeff;">
+        <p>Add more memories here as you go.</p>
+      </div>
+      <div class="page back end-page" style="background-color:#e6f2ff;">
+        <h3 class="page-title">The End</h3>
+        <p>Thanks for being an amazing friend!</p>
+      </div>
+    </div>
   </div>
-  <!-- End of flipbook -->
 
   <div class="controls centered">
     <button id="prevPage">&lt; Previous</button>
@@ -49,4 +70,5 @@
 
   <script src="./script.js"></script>
 </body>
+
 </html>
