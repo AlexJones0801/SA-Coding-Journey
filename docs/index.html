@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Flipbook - A Friendship Journey</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./style.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Corinthia:wght@400;700&family=Bonheur+Royale&display=swap');
@@ -19,8 +21,10 @@
       </div>
       <div class="page back" style="background-color:#b3d9ff;">
         <div class="page-content centered">
-          <img src="image/Ansh.png" alt="Welcome Image" style="width:35%;height: 60%;">
-          <!-- <img src="https://picsum.photos/200/301" alt="Welcome Image" style="width:100%"> -->
+          <div class="images-container">
+            <img src="image/Ansh.png" alt="Your Image" class="friendship-image" data-src="image/Ansh.png">
+            <img src="image/Ansh.png" alt="Ansh's Image" class="friendship-image" data-src="image/Ansh.png">
+          </div>
         </div>
       </div>
     </div>
@@ -53,6 +57,34 @@
     </div>
 
     <div class="leaf">
+      <div class="page front" style="background-color:#e6f2ff;">
+        <h2 class="page-title">Gallery</h2>
+        <section id="gallery">
+          <div class="container gallery-container">
+            <div class="row">
+              <!-- Gallery Images with Modal -->
+              <div class="col-xs-6">
+                <img src="https://unsplash.it/500" class="img-responsive gallery-img" data-src="https://unsplash.it/500">
+              </div>
+              <div class="col-xs-6">
+                <img src="https://unsplash.it/600" class="img-responsive gallery-img" data-src="https://unsplash.it/600">
+              </div>
+              <div class="col-xs-6">
+                <img src="https://unsplash.it/700" class="img-responsive gallery-img" data-src="https://unsplash.it/700">
+              </div>
+              <div class="col-xs-6">
+                <img src="https://unsplash.it/800" class="img-responsive gallery-img" data-src="https://unsplash.it/800">
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="page back" style="background-color:#cceeff;">
+        <p>Hope you enjoyed the gallery! Go back to see more memories!</p>
+      </div>
+    </div>
+
+    <div class="leaf">
       <div class="page front" style="background-color:#cceeff;">
         <p>Add more memories here as you go.</p>
       </div>
@@ -63,12 +95,47 @@
     </div>
   </div>
 
+  <!-- Modal for Image Display -->
+  <div id="imageModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="" id="modalImage" class="img-responsive">
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="controls centered">
     <button id="prevPage">&lt; Previous</button>
     <button id="nextPage">Next &gt;</button>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
   <script src="./script.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Click event for images to open in modal
+      $('.friendship-image, .gallery-img').on('click', function() {
+        // Get the source from data-src
+        const src = $(this).data('src');
+        // Set the src attribute of the modal image
+        $('#modalImage').attr('src', src);
+        // Show the modal
+        $('#imageModal').modal('show');
+      });
+  
+      // Optional: Close modal only on button or close icon click
+      $('#imageModal').on('hidden.bs.modal', function () {
+        $('#modalImage').attr('src', ''); // Clear the image source when modal closes
+      });
+    });
+  </script>
+  
+
+
 </body>
 
 </html>
